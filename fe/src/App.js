@@ -1,16 +1,15 @@
 import React, { useContext } from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
-import { AuthContext } from 'context/AuthProvider';
-import Layout from 'container/Layout/Layout';
+import { AuthContext } from 'context/index';
+import { Layout } from 'container/index';
 import {
   LOGIN_PAGE,
   REGISTRATION_PAGE,
   FORGET_PASSWORD_PAGE,
   HOME_PAGE,
   USER_PROFILE_PAGE,
-  USER_ACCOUNT_SETTINGS_PAGE,
-  PRIVACY_PAGE,
+  UPDATE_USER_PAGE,
   BOOKING_PAGE,
   BOOKING_LIST_PAGE,
   BOOKING_DETAIL_PAGE,
@@ -21,7 +20,8 @@ import {
   LISTING_SEARCH_POST_PAGE,
   ADD_EXHBN_PAGE,
   UPDATE_EXHBN_PAGE,
-  ADD_IMAGE_PAGE
+  ADD_IMAGE_PAGE,
+  MY_REVIEW_LIST
 } from 'settings/constant';
 
 /**
@@ -36,7 +36,7 @@ const routes = [
     path: HOME_PAGE,
     component: Loadable({
       loader: () =>
-        import('container/Home/Home'),
+        import('container/common/Home'),
       loading: Loading,
       modules: ['Home'],
     }),
@@ -46,9 +46,7 @@ const routes = [
     path: LOGIN_PAGE,
     component: Loadable({
       loader: () =>
-        import(
-         'container/Auth/SignIn/SignIn'
-        ),
+        import('container/user/SignIn/SignIn'),
       loading: Loading,
       modules: ['SignIn'],
     }),
@@ -57,9 +55,7 @@ const routes = [
     path: REGISTRATION_PAGE,
     component: Loadable({
       loader: () =>
-        import(
-          'container/Auth/SignUp/SignUp'
-        ),
+        import('container/user/SignUp/SignUp'),
       loading: Loading,
       modules: ['SignUp'],
     }),
@@ -68,9 +64,7 @@ const routes = [
     path: FORGET_PASSWORD_PAGE,
     component: Loadable({
       loader: () =>
-        import(
-          'container/Auth/ForgetPassword'
-        ),
+        import('container/user/ForgetPassword'),
       loading: Loading,
       modules: ['ForgetPassword'],
     }),
@@ -79,18 +73,34 @@ const routes = [
     path: USER_PROFILE_PAGE,
     component: Loadable({
       loader: () =>
-        import(
-        'container/Agent/AccountDetails/AgentDetailsViewPage'
-        ),
+        import('container/user/MyPage/AccountDetails/UserDetailsPage'),
       loading: Loading,
-      modules: ['AgentDetailsViewPage'],
+      modules: ['UserDetailsPage'],
+    }),
+  },
+  {
+    path: UPDATE_USER_PAGE,
+    component: Loadable({
+      loader: () =>
+        import('container/user/MyPage/AccountDetails/UpdateUser'),
+      loading: Loading,
+      modules: ['UpdateUser'],
+    }),
+  },
+  {
+    path: MY_REVIEW_LIST,
+    component: Loadable({
+      loader: () =>
+        import('container/user/MyPage/AccountDetails/MyReviewList'),
+      loading: Loading,
+      modules: ['MyReviewList'],
     }),
   },
   {
     path: `${BOOKING_PAGE}/:exhbnNum`,
     component: Loadable({
       loader: () =>
-        import('container/SinglePage/Booking/Booking'),
+        import('container/booking/Booking'),
       loading: Loading,
       modules: ['Booking'],
     }),
@@ -99,7 +109,7 @@ const routes = [
     path: BOOKING_LIST_PAGE,
     component: Loadable({
       loader: () =>
-        import( 'container/SinglePage/Booking/BookingList'),
+        import('container/booking/BookingList'),
       loading: Loading,
       modules: ['BookingList'],
     }),
@@ -108,16 +118,16 @@ const routes = [
     path: EXHBN_LIST_PAGE,
     component: Loadable({
       loader: () =>
-        import('container/Listing/Listing'),
+        import('container/exhibition/Listing/ExhibitionListing'),
       loading: Loading,
-      modules: ['ExhbnList'],
+      modules: ['ExhibitionList'],
     }),
   },
   {
-    path: HALL_LIST_PAGE,
+    path: `${HALL_LIST_PAGE}/:hallNum`,
     component: Loadable({
       loader: () =>
-        import('container/Listing/HallListing'),
+        import('container/exhibition/Listing/HallListing'),
       loading: Loading,
       modules: ['HallList'],
     }),
@@ -126,9 +136,7 @@ const routes = [
     path: `${BOOKING_DETAIL_PAGE}/:bookNum`,
     component: Loadable({
       loader: () =>
-        import(
-          'container/SinglePage/Booking/BookingDetail'
-        ),
+        import('container/booking/BookingDetail'),
       loading: Loading,
       modules: ['BookingDetail'],
     }),
@@ -137,9 +145,7 @@ const routes = [
     path: `${EXHBN_DETAIL_PAGE}/:exhbnNum`,
     component: Loadable({
       loader: () =>
-        import(
-         'container/SinglePage/ExhbnDetail'
-        ),
+        import('container/exhibition/ExhibitionDetail'),
       loading: Loading,
       modules: ['ExbhnDetail'],
     }),
@@ -148,9 +154,7 @@ const routes = [
     path: `${HALL_DETAIL_PAGE}/:hallNum`,
     component: Loadable({
       loader: () =>
-        import(
-          'container/HallPage/HallDetail'
-        ),
+        import('./container/hall/HallDetail'),
       loading: Loading,
       modules: ['HallDetail'],
     }),
@@ -159,9 +163,7 @@ const routes = [
     path: LISTING_SEARCH_POST_PAGE,
     component: Loadable({
       loader: () =>
-        import(
-          'container/Listing/SearchListing'
-        ),
+        import('./container/exhibition/Listing/SearchListing'),
       loading: Loading,
       modules: ['SearchListing'],
     }),
@@ -171,8 +173,7 @@ const routes = [
     path: `${HALL_DETAIL_PAGE}/:hallNum`,
     component: Loadable({
       loader: () =>
-        import(
-          'container/HallPage/HallDetail'),
+        import('./container/hall/HallDetail'),
       loading: Loading,
       modules: ['HallDetail'],
     }),
@@ -181,20 +182,16 @@ const routes = [
     path: ADD_EXHBN_PAGE,
     component: Loadable({
       loader: () =>
-        import(
-          'container/AddListing/AddExhbn'
-        ),
+        import('./container/exhibition/AddExhibition'),
       loading: Loading,
-      modules: ['AddExhbn'],
+      modules: ['AddExhibition'],
     }),
   },
   {
     path: `${UPDATE_EXHBN_PAGE}/:exhbnNum`,
     component: Loadable({
       loader: () =>
-        import(
-          'container/AddListing/UpdateExhbn'
-        ),
+        import('./container/exhibition/UpdateExhibition'),
       loading: Loading,
       modules: ['UpdateExhbn'],
     }),
@@ -203,9 +200,7 @@ const routes = [
     path: ADD_IMAGE_PAGE,
     component: Loadable({
       loader: () =>
-        import(
-          'container/AddListing/HotelPhotos'
-        ),
+        import('./container/exhibition/HotelPhotos'),
       loading: Loading,
       modules: ['HotelPhotos'],
     }),
@@ -217,22 +212,12 @@ const routes = [
  * Protected Route Component
  *
  */
-const AddListing = Loadable({
-  loader: () =>
-    import(
-    'container/AddListing/AddListing'
-    ),
-  loading: Loading,
-  modules: ['AddListing'],
-});
 
-const AgentAccountSettingsPage = Loadable({
+const AccountSettingsPage = Loadable({
   loader: () =>
-    import(
-      'container/Agent/AccountSettings/AgentAccountSettingsPage'
-    ),
+    import('./container/user/MyPage/AccountSettings/AccountSettingsPage'),
   loading: Loading,
-  modules: ['AgentAccountSettingsPage'],
+  modules: ['AccountSettingsPage'],
 });
 
 
@@ -245,7 +230,7 @@ const AgentAccountSettingsPage = Loadable({
 
 const NotFound = Loadable({
   loader: () =>
-    import('container/404/Error404'),
+    import('./container/common/404/Error404'),
   loading: Loading,
   modules: ['NotFound'],
 });
@@ -275,15 +260,16 @@ const App = () => {
         {routes.map(({ path, component, exact = false }) => (
           <Route key={path} path={path} exact={exact} component={component} />
         ))}
-        <ProtectedRoute path={ADD_EXHBN_PAGE} component={AddListing} />
-        <ProtectedRoute
-          path={USER_ACCOUNT_SETTINGS_PAGE}
-          component={AgentAccountSettingsPage}
-        />
         <Route component={NotFound} />
       </Switch>
     </Layout>
   );
 };
+
+        /* <ProtectedRoute path={ADD_EXHBN_PAGE} component={AddExhibition} />
+        <ProtectedRoute
+          path={USER_ACCOUNT_SETTINGS_PAGE}
+          component={AccountSettingsPage}
+        /> */
 
 export default App

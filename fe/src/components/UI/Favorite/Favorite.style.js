@@ -38,6 +38,7 @@ const FavoriteWrapper = styled.button`
     box-shadow: none;
     outline: none;
   }
+
   svg {
     width: 20px;
     height: 20px;
@@ -49,6 +50,7 @@ const FavoriteWrapper = styled.button`
       transition: fill 1s ease;
     }
   }
+
   &.active {
     svg {
       ${AddAnimation};

@@ -6,9 +6,11 @@ const SectionTitleWrapper = styled.div`
   justify-content: space-between;
   align-items: baseline;
   margin: 30px 0;
+
   @media (max-width: 480px) {
     margin: 15px 0 20px;
   }
+
   ${base}
 `;
 

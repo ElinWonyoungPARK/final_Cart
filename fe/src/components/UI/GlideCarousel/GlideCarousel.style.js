@@ -40,6 +40,7 @@ const BulletButton = styled.button`
   outline: none;
   border-radius: 50%;
   background-color: #d6d6d6;
+
   &:hover,
   &.glide__bullet--active {
     background-color: #869791;

@@ -7,7 +7,7 @@ import NavbarWrapper, {
   AvatarWrapper,
   AuthWrapper,
   MenuWrapper,
-} from './Navbar.style';
+} from 'components/Navbar/Navbar.style';
 
 const Navbar = ({
   className,

@@ -4,13 +4,16 @@ import { themeGet } from '@styled-system/theme-get';
 const LogoArea = styled.div`
   display: flex;
   align-items: center;
+
   a {
     display: flex;
     align-items: center;
   }
+
   img {
     width: 150px;
   }
+
   h3 {
     color: ${themeGet('primary.0', '#616266')};
     text-transform: capitalize;

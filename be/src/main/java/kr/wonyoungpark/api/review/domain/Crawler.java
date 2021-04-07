@@ -15,14 +15,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Crawler {
-    public List<Reviewer> crawler.placeAutoUrl(List<Reviewer> reviews, ChromeDriver driver, String url, String number) {
+    public List<Reviewer> placeAutoUrl(List<Reviewer> reviews, ChromeDriver driver, String url, String number) {
         Logger logger = LoggerFactory.getLogger(Crawler.class);
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         WebElement rev = driver.findElementByClassName("area_card_outer");
         List<WebElement> ls = rev.findElements(By.cssSelector("li"));
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < ls.size(); i++) {
             String reviewTitle = ls.get(i).findElement(By.className("this_text_stress")).getText();
             String reviewContent = ls.get(i).findElement(By.className("desc")).getText().replaceAll(",","");
             String score = ls.get(i).findElement(By.className("area_text_box")).getText();

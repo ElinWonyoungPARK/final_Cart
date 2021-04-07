@@ -1,10 +1,12 @@
 package kr.wonyoungpark.api.review.domain;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-@Component @Data @AllArgsConstructor
+@Component @Data @RequiredArgsConstructor @AllArgsConstructor
 class Reviewer {
     private String score;
     private String reviewTitle;

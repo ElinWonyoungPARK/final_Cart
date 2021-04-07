@@ -17,16 +17,15 @@ export const UPDATE_EXHBN_PAGE = '/update-exhbn';
 
 // Agent Profile Page Section
 export const USER_PROFILE_PAGE = '/profile';
-export const USER_ACCOUNT_SETTINGS_PAGE = '/account-settings';
+export const UPDATE_USER_PAGE = '/update-user';
 export const USER_PROFILE_EDIT_PAGE = '/edit';
 export const USER_IMAGE_EDIT_PAGE = '/change-image';
 export const USER_PASSWORD_CHANGE_PAGE = '/change-password';
 export const USER_PROFILE_DELETE = '/delete';
 export const USER_PROFILE_FAVOURITE = '/favourite-post';
-export const USER_PROFILE_CONTACT = '/contact';
+export const MY_REVIEW_LIST = '/myreview-list';
 
 // Other Pages
-export const PRIVACY_PAGE = '/privacy';
 export const ADD_IMAGE_PAGE = '/add-photos'
 
 // Login / Registration Page

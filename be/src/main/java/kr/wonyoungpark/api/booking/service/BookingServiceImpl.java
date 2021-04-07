@@ -10,7 +10,7 @@ import kr.wonyoungpark.api.common.service.AbstractService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
- @RequiredArgsConstructor
+ @RequiredArgsConstructor @Service
 public class BookingServiceImpl extends AbstractService<Booking> implements BookingService{
     private final BookingRepository repo;
 

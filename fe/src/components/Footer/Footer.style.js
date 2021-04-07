@@ -13,6 +13,7 @@ const FooterWrapper = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   @media (max-width: 480px) {
     padding: 60px 0 50px;
   }
@@ -21,10 +22,12 @@ const FooterWrapper = styled.footer`
 export const MenuWrapper = styled.div`
   margin-top: 40px;
   padding-left: 10px;
+
   @media (max-width: 480px) {
     margin-top: 30px;
     padding-left: 0;
   }
+
   ul,
   .ant-menu,
   ul.ant-menu {
@@ -32,31 +35,39 @@ export const MenuWrapper = styled.div`
     align-items: center;
     border: 0;
     background-color: transparent;
+
     @media (max-width: 480px) {
       flex-wrap: wrap;
     }
+
     li {
       margin: 0 30px;
       padding: 0;
       height: auto;
       margin-bottom: 0 !important;
+
       @media (max-width: 480px) {
         margin: 0 7px;
       }
+
       &:first-child {
         margin-left: 0;
       }
+
       &:last-child {
         margin-right: 0;
       }
+
       &.ant-menu-item-selected {
         background-color: transparent;
       }
+
       color: ${themeGet('text.0', '#2C2C2C')};
       font-size: 15px;
       line-height: 18px;
       font-weight: 700;
       transition: color 0.2s ease-in-out;
+
       a {
         color: ${themeGet('text.0', '#2C2C2C')};
         transition: color 0.2s ease-in-out;

@@ -13,6 +13,7 @@ export const Container = styled.div`
       padding: 30px;
       background-color: #ffffff;
     `}
+
   .ant-checkbox-group {
     display: flex;
     flex-direction: column;
@@ -26,8 +27,10 @@ export const Container = styled.div`
       }
     }
   }
+
   .date_picker {
     margin-bottom: 0;
+
     .DateRangePicker {
       .DateRangePickerInput {
         border-radius: 3px;

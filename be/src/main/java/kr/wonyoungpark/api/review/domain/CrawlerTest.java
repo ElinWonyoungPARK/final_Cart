@@ -7,8 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CrawlerTest {
+    /*
     public static void main(String[] args) {
-        String FILE_PATH = "C:\\Users\\User\\WonyoungCode\\finalProject\\be\\src\\main\\resources";
+        String FILE_PATH = "C:\\Users\\User\\WonyoungCode\\finalProject\\be\\src\\main\\resources\\";
         WebDriverManager.chromedriver().setup();
         ChromeDriver driver = new ChromeDriver();
         driver.get("http://www.google.com");
@@ -66,134 +67,17 @@ public class CrawlerTest {
         crawler.placeAutoUrl(reviews, driver,reviewURL+"search.naver?where=nexearch&sm=tab_etc&mra=bjBC&pkid=360&os=10483426&qvt=0&query=모빌을%20상상하다%20%3A%20알렉산더%20칼더전%20평점","48");     //모빌을 상상하다 : 알렉산더 칼더전 평점
         crawler.placeAutoUrl(reviews, driver,reviewURL+"search.naver?where=nexearch&sm=tab_etc&mra=bjBC&pkid=360&os=9385319&qvt=0&query=디어%20브레인%20평점","49");      //디어 브레인 평점
         crawler.placeAutoUrl(reviews, driver,reviewURL+"search.naver?where=nexearch&sm=tab_etc&mra=bjBC&pkid=360&os=9728631&qvt=0&query=오즈의%20미술관%20평점","50");     //오즈의 미술관 평점
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"11134307","51");     //설악 흔들바위
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"8693759","52");      //설악금호리조트
-//양식x	crawler.placeAutoUrl(reviews, driver,reviewURL+"21054684","53");     //설악동야영장
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"17721245","54");     //설악레저스쿨
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"8216362","55");      //설악산 권금성
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"8036325","56");	     //설악산 울산바위
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"24414762","57");	 //설악산 자생식물원
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"8375070","58");      //설악산 탐방안내소
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"7944159","59");	     //설악산가족호텔
-//양식x	crawler.placeAutoUrl(reviews, driver,reviewURL+"21054684","60");     //설악산국립공원 자동차야영장
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"15147983","61");     //설악산국립공원(외설악)
-        //예외처리(62)
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"26290244","63");     //설악산소공원
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"9168616","64");      //설악산파크리조트
-        //예외처리(65)
-//양식x	crawler.placeAutoUrl(reviews, driver,reviewURL+"10494265","66");     //설악파인리조트
-//양식x	crawler.placeAutoUrl(reviews, driver,reviewURL+"7939479","67");      //설악프라자컨트리클럽
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"1327493089","68");   //설악힐호텔
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"7952590","69");      //속초 등대전망대
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"649182629","70");    //속초 바다낚시
-//양식x	crawler.placeAutoUrl(reviews, driver,reviewURL+"8376588","71");      //설악해맞이공원
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"27351432","72");     //얼라이브 하트(Alive Heart)
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"12697671","73");     //엑스포타워
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"1970947390","74");   //외옹치 바다향기로
-        //예외처리(75)
-        //예외처리(76)
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"8065637","77");      //속초 조양동 유적
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"19304774","78");     //속초 하도문쌈채 마을,
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"1970947390","79");   //외옹치 바다향기로
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"12797187","80");     //속초관광수산시장
-        //예외처리(81)
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"7952759","82");      //속초문화원
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"10543534","83");     //속초문화회관
-//양식x	crawler.placeAutoUrl(reviews, driver,reviewURL+"374570243","84");    //속초비치호스텔
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"24751102","85");     //속초스파랜드
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"9158247","86");      //속초시립박물관
-//양식x	crawler.placeAutoUrl(reviews, driver,reviewURL+"371169740","88");    //속초엑스포유람선
-        //예외처리(89)
-        //예외처리(90)
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"7958898","91");      //속초항
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"22099937","92");     //속초해변
-        //예외처리(93)
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"1311816688","94");   //속초휘테
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"19947943","95");     //솔밭가든막국수
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"11126744","96");     //송월파크
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"797562421","97");    //스머프하우스
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"10543253","98");     //시골이모순두부
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"10532834","99");     //시골할머니
-//양식x	crawler.placeAutoUrl(reviews, driver,reviewURL+"11435044","100");    //시나브로 모텔
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"1098447501","101");  //신다신식당
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"1098447501","102");  //신다신식당
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"7993485","103"); 	 //아남프라자
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"11495403","104");    //아바이마을 갯배
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"11951680","105");    //아바이마을
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"19624242","106");    //아이리스9
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"978709031","107");   //양반댁함흥냉면
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"7994126","108");     //에이스모텔
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"24857116","109");    //연호리조트
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"7999903","110");     //영금정
-//양식x	crawler.placeAutoUrl(reviews, driver,reviewURL+"8011765","111");     //영랑호 화랑도 체험관광단지
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"8008145","112");     //영랑호
-//양식x	crawler.placeAutoUrl(reviews, driver,reviewURL+"10650417","113");    //영랑호리조트
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"24451703","114");    //옛고을순두부
-//양식x	crawler.placeAutoUrl(reviews, driver,reviewURL+"10633799","115");    //오대양횟집
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"9267011","116");     //옥돌할머니순두부
-//양식x	crawler.placeAutoUrl(reviews, driver,reviewURL+"9293198","117");     //왕건횟집
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"632257610","118");   //외옹치마을
-//양식x	crawler.placeAutoUrl(reviews, driver,reviewURL+"8021355","119");     //외옹치항
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"8016468","120");     //외옹치해변
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"9366982","121");     //위너스모텔
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"1131080213","122");  //위드유
-//양식x	crawler.placeAutoUrl(reviews, driver,reviewURL+"10688023","123");    //육담폭포
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"24267521","124");    //일출봉횟집
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"13606733","125");    //장사마을
-        //에외처리(126)
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"10737561","127");    //장사항
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"11441632","128");    //장원파크텔
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"21345651","129");    //재래식할머니순두부
-        //예외처리(130)
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"11170136","131");    //전주속풀이해장국
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"13320662","132");	  //점봉산산채
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"9395122","133");     //조광모텔
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"18682831","134");    //족욕공원
-        //에외처리(135)
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"8086528","136");  	  //진미횟집
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"10763109","137");    //진솔할머니순두부
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"8086427","138");     //진양횟집
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"8092408","139");     //척산온천장
-        //예외처리(140)
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"12924037","141");    //척산온천휴양촌
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"18682831","142");    //척산족욕공원
-//양식x	crawler.placeAutoUrl(reviews, driver,reviewURL+"10762824","143");    //천당폭포
-//양식x	crawler.placeAutoUrl(reviews, driver,reviewURL+"8091417","144");     //천불동계곡
-//양식x	crawler.placeAutoUrl(reviews, driver,reviewURL+"8088618","145");     //청대산
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"16106479","146");    //청초비치 모텔
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"26602585","147");    //청초수물회
-        //예외처리(148)
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"8105816","149");	 //청초호
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"11247110","150");    //청호해변
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"27158330","151");    //청호활어회센터
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"10842950","152");    //초당할머니집
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"125251387","153");   //초원리조텔
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"9511628","154");     //최옥란할머니순두부
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"11755111","155");    //카페뮤토
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"10493578","156");    //켄싱턴호텔 설악
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"8102174","157");     //코리아횟집
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"10901906","158");    //텔콘채록지
-//양식x	crawler.placeAutoUrl(reviews, driver,reviewURL+"25035970","159");    //토왕성폭포
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"11620926","160");    //평강막국수
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"8133251","161");     //학무정
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"12706186","162");    //학사평 콩꽃마을 순두부촌
-//양식x	crawler.placeAutoUrl(reviews, driver,reviewURL+"21510540","163");    //한송정가든
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"10482115","164");    //한화리조트 설악 워터피아
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"27025531","165");    //한화리조트 설악
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"8149034","166");     //해림모텔
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"10923704","167");    //해맞이모텔
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"26564223","168");    //해파랑길 45코스
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"27491575","169");    //해피하우스
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"9641200","170");     //헬리오스모텔
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"17101514","171");    //현대수리조트
-//양식x	crawler.placeAutoUrl(reviews, driver,reviewURL+"761418386","172");   //호텔 느낌
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"12868448","173");    //호텔 마레몬스
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"25815063","174");    //호텔 아마란스
-//양식x	crawler.placeAutoUrl(reviews, driver,reviewURL+"8011765","175");     //화랑도체험관광단지
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"345442586","176");   //화이트스테이션 호스텔
-        crawler.placeAutoUrl(reviews, driver,reviewURL+"11203702","177");	 //황두막
+        crawler.placeAutoUrl(reviews, driver,reviewURL+"search.naver?where=nexearch&sm=tab_etc&mra=bjBC&pkid=360&os=8745448&qvt=0&query=나의%20어린왕자에게%20평점","51");     //나의 어린왕자에게 평점
+        crawler.placeAutoUrl(reviews, driver,reviewURL+"search.naver?where=nexearch&sm=tab_etc&mra=bjBC&pkid=360&os=9563488&qvt=0&query=프렌치%20팝%20아트%20%3A%20피에르와%20쥘의%20포트레이트%20평점","52");      //프렌치 팝 아트 : 피에르와 쥘의 포트레이트 평점
+    	crawler.placeAutoUrl(reviews, driver,reviewURL+"search.naver?where=nexearch&sm=tab_etc&mra=bjBC&pkid=360&os=6510454&qvt=0&query=이상한%20나라의%20괴짜들%20%3A%20Geek%20Zone%20평점","53");     //이상한 나라의 괴짜들 : Geek Zone 평점
+        crawler.placeAutoUrl(reviews, driver,reviewURL+"search.naver?where=nexearch&sm=tab_etc&mra=bjBC&pkid=360&os=9775780&qvt=0&query=슈퍼스타%20존%20버거맨%20평점","54");     //슈퍼스타 존 버거맨 평점
+        crawler.placeAutoUrl(reviews, driver,reviewURL+"search.naver?where=nexearch&sm=tab_etc&mra=bjBC&pkid=360&os=8784573&qvt=0&query=러빙빈센트展%20(Loving%20Vincent%20Exhibition)%20평점","55");      //러빙빈센트展 (Loving Vincent Exhibition) 평점
+        crawler.placeAutoUrl(reviews, driver,reviewURL+"search.naver?where=nexearch&sm=tab_etc&mra=bjBC&pkid=360&os=7707465&qvt=0&query=마르크%20샤갈%20특별전%20-%20영혼의%20정원%20평점","56");	     //마르크 샤갈 특별전 - 영혼의 정원 평점
+        crawler.placeAutoUrl(reviews, driver,reviewURL+"search.naver?where=nexearch&sm=tab_etc&mra=bjBC&pkid=360&os=6482662&qvt=0&query=HI%2C%20POP%20-%20거리로%20나온%20예술%2C%20팝아트展%20평점","57");	 //HI, POP - 거리로 나온 예술, 팝아트展 평점
+        crawler.placeAutoUrl(reviews, driver,reviewURL+"search.naver?where=nexearch&sm=tab_etc&mra=bjBC&pkid=360&os=6254123&qvt=0&query=The%20New%20Vision%20%3A%20from%20Bauhaus%20to%20A.I.%20평점","58");      //The New Vision : from Bauhaus to A.I. 평점
 
         MakeCsv.createCSV(reviews, "ReviewerList", FILE_PATH); //csv파일 생성
         driver.close();}
-}
 
+     */
+}

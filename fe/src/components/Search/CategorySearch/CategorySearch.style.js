@@ -4,11 +4,13 @@ import { themeGet } from '@styled-system/theme-get';
 const CategroySearchWrapper = styled.div`
   display: flex;
   align-items: center;
+
   .view_with__popup {
     margin-right: 15px;
     &:last-child {
       margin-right: 0;
     }
+
     .popup_handler {
       button,
       button.ant-btn {
@@ -25,6 +27,7 @@ const CategroySearchWrapper = styled.div`
         }
       }
     }
+
     &.active {
       .popup_handler {
         button,
@@ -33,11 +36,13 @@ const CategroySearchWrapper = styled.div`
           border-color: ${themeGet('primary.0', '#616266')};
           background-color: ${themeGet('primary.0', '#616266')};
         }
+
         & + .popup_container {
           margin-top: 15px;
           border: 1px solid ${themeGet('border.3', '#E6E6E6')};
         }
       }
+
       &::after {
         content: '';
         display: block;
@@ -50,6 +55,7 @@ const CategroySearchWrapper = styled.div`
         pointer-events: none;
       }
     }
+
     &.activated {
       .popup_handler {
         button,
@@ -63,6 +69,7 @@ const CategroySearchWrapper = styled.div`
         }
       }
     }
+
     .popup_container {
       #popup {
         > div {
@@ -85,6 +92,7 @@ const CategroySearchWrapper = styled.div`
       }
     }
   }
+
   .date_picker {
     .DateRangePicker {
       display: block;
@@ -107,6 +115,7 @@ const CategroySearchWrapper = styled.div`
 
 export const RoomGuestWrapper = styled.div`
   width: 100%;
+
   strong {
     font-size: 15px;
     font-weight: 400;
@@ -119,6 +128,7 @@ export const ItemWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
+
   .quantity {
     height: 30px;
     input {
@@ -134,6 +144,7 @@ export const ItemWrapper = styled.div`
 export const ActionWrapper = styled.div`
   overflow: hidden;
   margin-top: 27px;
+
   .ant-btn {
     border: 0;
     padding: 0;
@@ -151,6 +162,7 @@ export const ActionWrapper = styled.div`
     &:focus {
       outline: none;
     }
+
     &.ant-btn-primary {
       float: right;
       border-color: transparent;

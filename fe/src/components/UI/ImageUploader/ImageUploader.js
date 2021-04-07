@@ -22,16 +22,20 @@ export const ImageUploader = () => {
 
   /*
   handleCancel = () => this.setState({ previewVisible: false });
+
   handlePreview = (file) => {
     this.setState({
       previewImage: file.url || file.thumbUrl,
       previewVisible: true,
     });
   };
+
   handleChange = ({ fileList }) => this.setState({ fileList });
+
   render() {
     const { previewVisible, previewImage, fileList } = this.state;
     const Dragger = Upload.Dragger;
+
     const uploadButton = (
       <ImageUpload>
         <div className="image-drag-area">

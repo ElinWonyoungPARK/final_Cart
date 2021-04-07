@@ -18,11 +18,13 @@ const ContainerWrapper = styled.div`
     css`
       padding-left: 30px;
       padding-right: 30px;
+
       @media (max-width: 480px) {
         padding-left: 25px;
         padding-right: 25px;
       }
     `};
+
   ${(props) =>
     props.fluid &&
     css`
@@ -33,14 +35,17 @@ const ContainerWrapper = styled.div`
         padding-right: 75px;
       }
     `}
+
   @media (min-width: 768px) {
     max-width: 750px;
     width: 100%;
   }
+
   @media (min-width: 992px) {
     max-width: 970px;
     width: 100%;
   }
+
   @media (min-width: 1200px) {
     max-width: 1170px;
     width: 100%;

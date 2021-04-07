@@ -23,6 +23,7 @@ export const HotelInfo = styled.div`
 
 export const InfoArea = styled.div`
   padding-left: 20px;
+
   @media (max-width: 767px) {
     padding-left: 0;
   }
@@ -50,16 +51,20 @@ export const HotelRating = styled.div`
   color: ${themeGet('text.0', '#2C2C2C')};
   font-size: 12px;
   margin-top: 1px;
+
   i {
     color: ${themeGet('primary.0', '#616266')};
   }
+
   svg {
     fill: ${themeGet('primary.0', '#616266')};
   }
+
   strong {
     font-weight: 700;
     margin-left: 7px;
   }
+
   .ant-rate {
     margin-top: -2px;
     .ant-rate-star {
@@ -82,11 +87,13 @@ export const Price = styled.div`
   text-transform: uppercase;
   padding: 10px 32px;
   border-left: 1px solid ${themeGet('border.3', '#E6E6E6')};
+
   span {
     font-size: 16px;
     line-height: 1.37em;
     color: ${themeGet('text.0', '#2C2C2C')};
   }
+
   @media (max-width: 767px) {
     padding: 0;
     border-left: 0;
@@ -112,19 +119,24 @@ export const ActionBtn = styled.div`
     color: ${themeGet('color.1', '#ffffff')};
     background-color: ${themeGet('primary.0', '#616266')};
     transition: all 0.3s ease;
+
     @media (max-width: 375px) {
       min-width: 120px;
     }
+
     @media (max-width: 320px) {
       min-width: 90px;
     }
+
     &::after {
       display: none;
     }
+
     &:hover {
       outline: none;
       background-color: ${themeGet('primary.1', '#399C9F')};
     }
+
     &:focus {
       outline: none;
     }

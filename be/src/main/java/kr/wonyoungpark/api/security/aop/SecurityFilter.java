@@ -14,7 +14,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 import org.springframework.web.filter.OncePerRequestFilter;
 
-;
+
 public class SecurityFilter extends OncePerRequestFilter{
     private SecurityProvider provider;
 
@@ -25,7 +25,7 @@ public class SecurityFilter extends OncePerRequestFilter{
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
         String token = provider.resolveToken(httpServletRequest);
-        try {
+       /*try {
             if (token != null && provider.validateToken(token)) {
                 Authentication auth = provider.getAuthentication(token);
                 SecurityContextHolder.getContext().setAuthentication(auth);
@@ -38,7 +38,7 @@ public class SecurityFilter extends OncePerRequestFilter{
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }
+        }*/
 
         filterChain.doFilter(httpServletRequest, httpServletResponse);
     }

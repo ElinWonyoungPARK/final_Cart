@@ -16,6 +16,7 @@ export const RoomGuestWrapper = styled.div`
   @media (max-width: 480px) {
     max-width: 300px;
   }
+
   strong {
     font-size: 15px;
     font-weight: 400;
@@ -28,6 +29,7 @@ export const ItemWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
+
   .quantity {
     height: 22px;
     input {
@@ -42,6 +44,7 @@ export const ItemWrapper = styled.div`
 
 export const FilterArea = styled.div`
   overflow: hidden;
+
   button,
   button.ant-btn {
     color: ${themeGet('text.0', '#2C2C2C')};
@@ -67,18 +70,21 @@ export const FilterElementsWrapper = styled.div`
   position: relative;
   height: 100%;
   overflow: hidden;
+
   .accordion {
     overflow-y: auto;
     overflow-x: hidden;
     padding-right: 35px;
     margin-right: -35px;
     height: calc(100% - 68px);
+
     /* accordion item style */
     .accordion__item {
       border-bottom: 1px solid ${themeGet('border.3', '#E6E6E6')};
       &:last-child {
         border-bottom: 0;
       }
+
       /* accordion heading style */
       .accordion__heading {
         .accordion__button {
@@ -98,6 +104,7 @@ export const FilterElementsWrapper = styled.div`
           }
         }
       }
+
       /* accordion panel style */
       .accordion__panel {
         padding-bottom: 29px;
@@ -105,6 +112,7 @@ export const FilterElementsWrapper = styled.div`
         &[hidden] {
           animation: 0.25s ${fadeIn} ease;
         }
+
         /* date picker style */
         .date_picker {
           margin-bottom: 0;
@@ -135,6 +143,7 @@ export const FilterElementsWrapper = styled.div`
             }
           }
         }
+
         /* checkbox group style */
         .ant-checkbox-group {
           display: flex;
@@ -168,6 +177,7 @@ export const FilterElementsWrapper = styled.div`
             }
           }
         }
+
         /* price range component style */
         .ant-slider {
           margin-left: 7px;
@@ -228,6 +238,7 @@ export const ButtonGroup = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+
   button.ant-btn {
     color: ${themeGet('text.0', '#2C2C2C')};
     font-size: 15px;

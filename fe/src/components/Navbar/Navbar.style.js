@@ -13,6 +13,7 @@ const NavbarWrapper = styled.nav`
   @media (min-width: 991px) {
     display: flex;
   }
+
   &.is_transparent {
     background: transparent;
     position: fixed;
@@ -23,6 +24,7 @@ const NavbarWrapper = styled.nav`
     border-bottom: 0;
     background-color: transparent;
     transition: all 0.3s ease-out;
+
     .ant-menu {
       li {
         &.ant-menu-item-selected {
@@ -74,8 +76,10 @@ export const MenuArea = styled.div`
 
 export const AvatarWrapper = styled.div`
   margin-left: 46px;
+
   .avatar-dropdown {
     position: relative;
+
     .dropdown-handler {
       width: 40px;
       height: 40px;
@@ -88,6 +92,7 @@ export const AvatarWrapper = styled.div`
         object-fit: cover;
       }
     }
+
     .dropdown-menu {
       min-width: 180px;
       border-right: 0;
@@ -182,6 +187,7 @@ export const MenuWrapper = styled.div`
       &.ant-menu-item-active {
         background-color: transparent;
       }
+
       a {
         display: block;
         padding: 30px 16px;
@@ -205,6 +211,7 @@ export const MenuWrapper = styled.div`
 
 export const AuthWrapper = styled.div`
   margin-left: 74px;
+
   ul,
   .ant-menu,
   ul.ant-menu {
@@ -212,6 +219,7 @@ export const AuthWrapper = styled.div`
     align-items: center;
     border: 0;
     background-color: transparent;
+
     li {
       margin: 0;
       padding: 0;
@@ -225,6 +233,7 @@ export const AuthWrapper = styled.div`
       &.ant-menu-item-selected {
         background-color: transparent;
       }
+
       a {
         display: flex;
         align-items: center;
@@ -238,11 +247,13 @@ export const AuthWrapper = styled.div`
           color: ${themeGet('primary.0', '#616266')};
         }
       }
+
       &:last-child {
         a {
           color: ${themeGet('color.1', '#ffffff')};
           background-color: ${themeGet('primary.0', '#616266')};
           transition: opacity 0.2s ease;
+
           &:hover {
             opacity: 0.9;
           }

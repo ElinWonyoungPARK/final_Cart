@@ -3,6 +3,7 @@ import { themeGet } from '@styled-system/theme-get';
 
 const Wrapper = styled.div`
   margin-bottom: 24px;
+
   .field-label {
     display: block;
     color: ${themeGet('text.0', '#2C2C2C')};
@@ -11,6 +12,7 @@ const Wrapper = styled.div`
     font-weight: 600;
     margin-bottom: 15px;
   }
+
   .ant-input,
   .ant-picker,
   .ant-input-number,
@@ -27,6 +29,7 @@ const Wrapper = styled.div`
       box-shadow: 0 0 0 1px rgba(0, 132, 137, 0.2);
     }
   }
+
   .ant-checkbox-wrapper {
     .ant-checkbox {
       + span {
@@ -47,6 +50,7 @@ const Wrapper = styled.div`
       }
     }
   }
+
   .ant-input-number {
     max-width: 100px;
     .ant-input-number-input {
@@ -62,11 +66,13 @@ const Wrapper = styled.div`
       color: ${themeGet('primary.0', '#616266')};
     }
   }
+
   .ant-picker {
     &:hover {
       border-color: ${themeGet('border.3', '#E6E6E6')};
     }
   }
+
   .ant-select {
     &.ant-select-single:not(.ant-select-customize-input) {
       width: 100%;
@@ -91,6 +97,7 @@ const Wrapper = styled.div`
       }
     }
   }
+
   &.has-error {
     .ant-input,
     .ant-input-password {
@@ -105,6 +112,7 @@ const Wrapper = styled.div`
       }
     }
   }
+
   .ant-input-password {
     .ant-input {
       min-height: auto;
@@ -115,6 +123,7 @@ const Wrapper = styled.div`
       }
     }
   }
+
   .ant-radio-group-solid {
     .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
       border-color: ${themeGet('primary.0', '#616266')};
@@ -135,6 +144,7 @@ const Wrapper = styled.div`
       }
     }
   }
+
   button[type='submit'] {
     border-radius: 3px;
     height: 47px;
@@ -146,6 +156,7 @@ const Wrapper = styled.div`
     padding-left: 28px;
     padding-right: 28px;
     line-height: 1;
+
     &::after {
       content: none;
     }
