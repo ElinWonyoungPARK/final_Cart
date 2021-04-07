@@ -1,4 +1,5 @@
 package kr.wonyoungpark.api.security.config;
+import lombok.RequiredArgsConstructor;
 
 import kr.wonyoungpark.api.security.domain.SecurityProvider;
 import org.modelmapper.ModelMapper;
@@ -15,8 +16,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
-
 
 @EnableWebSecurity
 @Configuration
@@ -50,6 +49,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
         http.authorizeRequests()//
                 .antMatchers("/users/signin").permitAll()//
                 .antMatchers("/users/signup").permitAll()//
+                .antMatchers("/exhbns").permitAll()
+                .antMatchers("/exhbns/all").permitAll()
+                .antMatchers("/exhbns/one/{id}").permitAll()
+                .antMatchers("/exhbns/find/{id}").permitAll()
+                .antMatchers("/exhbns/now").permitAll()
+                .antMatchers("/exhbns/fin").permitAll()
+                .antMatchers("/exhbns/topList").permitAll()
+                .antMatchers("/exhbns/search/{exhbnTitle}").permitAll()
+                .antMatchers("/exhbns/hall/{id}").permitAll()
+                .antMatchers("/exhbns/halls/{id}").permitAll()
+                .antMatchers("/halls").permitAll()
+                .antMatchers("/halls/one/{id}").permitAll()
+                .antMatchers("/halls/find/{id}").permitAll()
+                .antMatchers("/reviews").permitAll()
                 .antMatchers("/h2-console/**/**").permitAll()
                 // Disallow everything else..
                 .anyRequest().authenticated();

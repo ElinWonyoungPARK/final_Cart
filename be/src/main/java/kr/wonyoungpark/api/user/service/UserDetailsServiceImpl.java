@@ -1,7 +1,7 @@
 package kr.wonyoungpark.api.user.service;
 
 
-import kr.wonyoungpark.api.user.domain.UserVo;
+import kr.wonyoungpark.api.user.domain.UserVO;
 import kr.wonyoungpark.api.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,7 +15,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private final UserRepository userRepository;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        final UserVo user = userRepository.findByUsername(username);
+        final UserVO user = userRepository.findByUsername(username);
+        System.out.println(user.toString());
 
         if (user == null) {
             throw new UsernameNotFoundException("User '" + username + "' not found");

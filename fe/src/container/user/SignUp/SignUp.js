@@ -25,7 +25,6 @@ const SignUp = () => {
         <Title>Welcome To C:ART</Title>
         <TitleInfo>회원가입 정보를 입력해주세요</TitleInfo>
         <SignUpForm />
-        <Divider>SNS로 가입하기</Divider>
         <Text>
           이미 회원입니다. &nbsp;
           <Link to={LOGIN_PAGE}>로그인하러가기</Link>

@@ -9,18 +9,36 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import kr.wonyoungpark.api.analysis.domain.Analysis;
+
 import lombok.Getter;
 
 @Entity @Getter @Table(name = "recommends")
 public class Recommend {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "rec_num") private long recNum;
-	
+
+	@JsonBackReference(value = "analysis")
 	@ManyToOne
 	@JoinColumn(name = "anal_num")
 	private Analysis analysis;
+
+	public void setRecNum(long recNum) {
+		this.recNum = recNum;
+	}
+
+	public void setAnalysis(Analysis analysis) {
+		this.analysis = analysis;
+	}
+
+	@Override
+	public String toString() {
+		return "Recommend{" +
+				"recNum=" + recNum +
+				'}';
+	}
 }
 /*
 create table shows(

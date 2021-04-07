@@ -1,6 +1,5 @@
 package kr.wonyoungpark.api.recommend.repository;
 
-
 import kr.wonyoungpark.api.recommend.domain.Recommend;
 import org.springframework.data.jpa.repository.JpaRepository;
 

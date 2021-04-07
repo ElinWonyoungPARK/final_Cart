@@ -1,14 +1,16 @@
 package kr.wonyoungpark.api.review.repository;
 
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import kr.wonyoungpark.api.review.domain.Review;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import kr.wonyoungpark.api.review.domain.ReviewDTO;
 
 interface ReviewCustomRepository{
-
+	public List<ReviewDTO> findByUserNum(long UserNum);
 }
-@Repository
-public interface ReviewRepository extends JpaRepository<Review, Long>, ReviewCustomRepository {
 
+public interface ReviewRepository extends JpaRepository<Review, Long>, ReviewCustomRepository {
+	
 }

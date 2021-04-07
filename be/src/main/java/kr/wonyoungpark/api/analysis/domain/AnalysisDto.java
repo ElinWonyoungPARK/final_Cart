@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Component @Data @Lazy
-public class AnalysisDto {
+public class AnalysisDTO {
 	private long analNum;
 	private long exhbnNum;
 	private long userNum;

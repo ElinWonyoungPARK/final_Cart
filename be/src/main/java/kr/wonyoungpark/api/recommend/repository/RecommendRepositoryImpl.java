@@ -1,9 +1,9 @@
 package kr.wonyoungpark.api.recommend.repository;
 
-import kr.wonyoungpark.api.recommend.domain.Recommend;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 import org.springframework.stereotype.Repository;
 
+import kr.wonyoungpark.api.recommend.domain.Recommend;
 
 @Repository
 public class RecommendRepositoryImpl extends QuerydslRepositorySupport implements RecommendCustomRepository{

@@ -1,8 +1,5 @@
 package kr.wonyoungpark.api.recommend.controller;
 
-import kr.wonyoungpark.api.common.controller.AbstractController;
-import kr.wonyoungpark.api.recommend.domain.Recommend;
-import kr.wonyoungpark.api.recommend.service.RecommendServiceImpl;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
@@ -20,11 +17,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PathVariable;
 
-
+import kr.wonyoungpark.api.recommend.domain.Recommend;
+import kr.wonyoungpark.api.recommend.service.RecommendServiceImpl;
+import kr.wonyoungpark.api.common.controller.AbstractController;
 
 @RestController @RequiredArgsConstructor @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/recommends")
-public class RecommendController extends AbstractController<Recommend> {
+public class RecommendController extends AbstractController<Recommend>{
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	final RecommendServiceImpl service;
 	
@@ -32,6 +31,7 @@ public class RecommendController extends AbstractController<Recommend> {
 	public ResponseEntity<Long> save(@RequestBody Recommend t) {
 		return ResponseEntity.ok(service.save(t));
 	}
+
 	@DeleteMapping("/delete")
 	public ResponseEntity<Long> delete(@RequestBody Recommend t) {
 		return ResponseEntity.ok(service.delete(t));

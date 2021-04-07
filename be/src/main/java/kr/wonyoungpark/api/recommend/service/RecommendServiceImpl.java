@@ -3,11 +3,12 @@ package kr.wonyoungpark.api.recommend.service;
 import java.util.List;
 import java.util.Optional;
 
-import kr.wonyoungpark.api.common.service.AbstractService;
-import kr.wonyoungpark.api.recommend.domain.Recommend;
-import kr.wonyoungpark.api.recommend.repository.RecommendRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import kr.wonyoungpark.api.recommend.domain.Recommend;
+import kr.wonyoungpark.api.recommend.repository.RecommendRepository;
+import kr.wonyoungpark.api.common.service.AbstractService;
 
 @Service @RequiredArgsConstructor
 public class RecommendServiceImpl extends AbstractService<Recommend> implements RecommendService{

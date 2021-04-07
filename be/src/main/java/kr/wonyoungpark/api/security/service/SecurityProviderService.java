@@ -1,5 +1,4 @@
 package kr.wonyoungpark.api.security.service;
-
 import java.util.Date;
 import org.springframework.security.core.Authentication;
 public interface SecurityProviderService<T> {

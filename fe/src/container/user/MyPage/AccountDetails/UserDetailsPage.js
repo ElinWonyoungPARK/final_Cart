@@ -28,7 +28,7 @@ import AgentDetailsPage, {
   NavigationArea,
 } from 'container/user/MyPage/AccountDetails/UserDetails.style';
 import { ButtonBox } from 'container/exhibition/ExhibitionDetail.style';
-import UpdateUser from './UpdateUser';
+import UpdateUser from 'container/user/MyPage/AccountDetails/UpdateUser';
 import MyReviewList from './MyReviewList'
 
 const ProfileNavigation = (props) => {
@@ -68,7 +68,7 @@ const ProfileRoute = (props) => {
   const { match } = props;
   return (
     <Container fluid={true}>
-      <Route
+      <Route exact
         path={`${match.path}${USER_PROFILE_FAVOURITE}`}
         component={UserFavItemLists}
       />
@@ -105,13 +105,7 @@ const AgentProfileInfo = () => {
       </BannerSection>
       <UserInfoArea>
         <Container fluid={true}>
-          <ProfileImage>
-            {profile_pic ? (
-              <Image src={profile_pic.url} alt="Profile" />
-            ) : (
-              <ProfilePicLoader />
-            )}
-          </ProfileImage>
+          
           <ProfileInformationArea>
             <ProfileInformation>
               <Heading content={username} />

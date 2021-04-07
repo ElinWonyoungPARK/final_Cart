@@ -1,5 +1,4 @@
 package kr.wonyoungpark.api.common.domain;
-
 import lombok.Builder;
 import lombok.Getter;
 

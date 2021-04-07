@@ -1,5 +1,4 @@
 package kr.wonyoungpark.api.security.config;
-
 import kr.wonyoungpark.api.security.aop.SecurityFilter;
 import kr.wonyoungpark.api.security.domain.SecurityProvider;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;

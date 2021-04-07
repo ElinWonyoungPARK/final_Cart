@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Component @Data @Lazy
-public class RecommendDto {
+public class RecommendDTO {
 	private long recNum;
 	private long exhbnNum;
 	private long userNum;

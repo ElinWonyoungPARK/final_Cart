@@ -1,5 +1,4 @@
 package kr.wonyoungpark.api.security.exception;
-
 import lombok.Getter;
 
 @Getter

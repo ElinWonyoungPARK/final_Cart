@@ -1,6 +1,5 @@
 package kr.wonyoungpark.api.security.domain;
 
-
 //import com.example.demo.core.security.AuthToken;
 import io.jsonwebtoken.*;
 //import io.jsonwebtoken.security.SecurityException;
@@ -21,7 +20,7 @@ import java.util.Date;
 public class SecurityToken {
     private final String token;
     private final String key;
-    private int tokenExpirationMsec = 1800000; // 만료시간 30분
+    private int tokenExpirationMsec = 3600000; // 만료시간 60분
     private static final String AUTHORITIES_KEY = "role";
 
     SecurityToken(String id, String role, Date expiredDate, String key) {

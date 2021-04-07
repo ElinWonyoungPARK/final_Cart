@@ -1,6 +1,5 @@
 package kr.wonyoungpark.api.analysis.controller;
 
-import kr.wonyoungpark.api.common.controller.AbstractController;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
@@ -20,18 +19,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 import kr.wonyoungpark.api.analysis.domain.Analysis;
 import kr.wonyoungpark.api.analysis.service.AnalysisServiceImpl;
+import kr.wonyoungpark.api.common.controller.AbstractController;
 
 @RestController @RequiredArgsConstructor @CrossOrigin(origins = "*", allowedHeaders = "*")
-@RequestMapping("/analysis")
-public class AnalysisController extends AbstractController<Analysis> {
+@RequestMapping("/analyses")
+public class AnalysisController extends AbstractController<Analysis>{
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	final AnalysisServiceImpl service;
 	
-	@PostMapping("/save")
+	@PostMapping("")
 	public ResponseEntity<Long> save(@RequestBody Analysis t) {
 		return ResponseEntity.ok(service.save(t));
 	}
-	@DeleteMapping("/delete")
+	@DeleteMapping("")
 	public ResponseEntity<Long> delete(@RequestBody Analysis t) {
 		return ResponseEntity.ok(service.delete(t));
 	}
@@ -39,7 +39,7 @@ public class AnalysisController extends AbstractController<Analysis> {
 	public ResponseEntity<Long> count() {
 		return ResponseEntity.ok(service.count());
 	}
-	@GetMapping("/all")
+	@GetMapping("")
 	public ResponseEntity<List<Analysis>> findAll() {
 		return ResponseEntity.ok(service.findAll());
 	}

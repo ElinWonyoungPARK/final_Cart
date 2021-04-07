@@ -13,28 +13,50 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import kr.wonyoungpark.api.exhbn.domain.Exhbn;
-
-
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import kr.wonyoungpark.api.exhibition.domain.Exhbn;
 import kr.wonyoungpark.api.recommend.domain.Recommend;
-import kr.wonyoungpark.api.user.domain.UserVo;
+import kr.wonyoungpark.api.user.domain.UserVO;
+
 import lombok.Getter;
+import kr.wonyoungpark.api.user.domain.UserVO;
 
 @Entity @Getter @Table(name = "analyses")
 public class Analysis {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "anal_num") private long analNum;
-	
+
+	@JsonBackReference(value = "user")
 	@ManyToOne
 	@JoinColumn(name = "user_num")
-	private UserVo user;
-	
+	private UserVO user;
+
+	@JsonBackReference(value = "exhbn")
 	@ManyToOne
 	@JoinColumn(name = "exhbn_num")
 	private Exhbn exhbn;
-	
+
+	@JsonManagedReference @JsonIgnore
 	@OneToMany(mappedBy = "analysis")
 	private List<Recommend> recommendList = new ArrayList<>();
+
+	public void setAnalNum(long analNum) {
+		this.analNum = analNum;
+	}
+
+	public void setUser(UserVO user) {
+		this.user = user;
+	}
+
+	public void setExhbn(Exhbn exhbn) {
+		this.exhbn = exhbn;
+	}
+
+	public void setRecommendList(List<Recommend> recommendList) {
+		this.recommendList = recommendList;
+	}
 }
 /*
 create table shows(

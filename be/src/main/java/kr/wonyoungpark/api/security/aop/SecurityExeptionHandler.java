@@ -1,5 +1,4 @@
 package kr.wonyoungpark.api.security.aop;
-
 import kr.wonyoungpark.api.common.domain.Messenger;
 import kr.wonyoungpark.api.security.exception.ErrorCode;
 import kr.wonyoungpark.api.security.exception.LoginRuntimeException;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @Slf4j
 @ControllerAdvice
-public class SecurityExceptionHandler {
+public class SecurityExeptionHandler {
     @ExceptionHandler(RuntimeException.class)
     protected ResponseEntity<Messenger> handleRuntimeException(RuntimeException e) {
 
@@ -98,5 +97,4 @@ public class SecurityExceptionHandler {
 
         return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
     }
-
 }

@@ -1,6 +1,6 @@
 package kr.wonyoungpark.api.user.repository;
 
-import kr.wonyoungpark.api.user.domain.UserVo;
+import kr.wonyoungpark.api.user.domain.UserVO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
@@ -13,9 +13,9 @@ interface UserCustomRepository {
 
 }
 @Repository
-public interface UserRepository extends JpaRepository<UserVo, Long>, UserCustomRepository {
+public interface UserRepository extends JpaRepository<UserVO, Long>, UserCustomRepository {
     boolean existsByUsername(String username);
-    UserVo findByUsername(String username);
+    UserVO findByUsername(String username);
     @Transactional
     void deleteByUsername(String username);
 }

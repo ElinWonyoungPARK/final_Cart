@@ -1,5 +1,4 @@
 package kr.wonyoungpark.api.security.exception;
-
 import org.springframework.http.HttpStatus;
 
 import lombok.Getter;

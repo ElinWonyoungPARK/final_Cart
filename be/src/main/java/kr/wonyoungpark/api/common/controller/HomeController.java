@@ -7,9 +7,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @RestController
-public class HomeController{
+public class HomeController {
     @GetMapping("/")
     public String home(){
-        return String.format("Web Service started at %s", new SimpleDateFormat("MM-dd HH:mm").format(new Date()));
+        return String.format("web server started at %s", new SimpleDateFormat("MM-dd HH:mm").format(new Date()));
     }
 }

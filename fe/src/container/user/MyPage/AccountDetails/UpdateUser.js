@@ -1,7 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react' 
-const btnStyle={width:150, margin: '0 auto'}
-const blackBorder = {border: "1px solid black"}
+import { Link } from 'react-router-dom';
+import { Divider, Col} from 'antd';
+import Wrapper, { TextInfo, Label, Title, Input } from 'container/user/MyPage/AccountDetails/UpdateUser.style';
 const UpdateUser = (props) => {
     const [ user, setUser ] = useState({})
     const [username, setUsername] = useState('')
@@ -28,11 +29,11 @@ const UpdateUser = (props) => {
     }
     const userDelete = e => {
         e.preventDefault()
+
         axios({
             url: URL+user.userNum,
             method: 'delete',
-            headers: {'Content-Type':'application/json','Authorization': 'Bearer '+localStorage.getItem("token")},
-            data: {}
+            headers: {'Content-Type':'application/json','Authorization': 'Bearer '+localStorage.getItem("token")}
         }).then(res => {
             props.history.push('/')
         }).catch(err => {
@@ -40,43 +41,51 @@ const UpdateUser = (props) => {
         })
     }
     useEffect(()=>editUser(), [])
-    return (<>
-    <div style={{width:500, margin: "0 auto"}}>
-        <h3>회원정보 수정하기</h3>
-        <table style={blackBorder}>
-            <tr style={blackBorder}>
-                <td style={blackBorder}>회원번호</td>
-                <td style={blackBorder}>아이디</td>
-                <td style={blackBorder}>비밀번호</td>
-                <td style={blackBorder}>이름</td>
-                <td style={blackBorder}>이메일</td>
-                <td style={blackBorder}>성별</td>
-                <td style={blackBorder}>생년월일</td>
-                <td style={blackBorder}>전화번호</td>
-                <td style={blackBorder}>관리자</td>
-                <td style={blackBorder}>선호장르</td>
-                </tr>
-            <tr style={blackBorder}>
-                <td style={blackBorder}>{user.userNum}</td>
-                <td style={blackBorder}><input className="box" type="text" onChange={e => setUsername(e.target.value)}/></td>
-                <td style={blackBorder}><input className="box" type="text" onChange={e => setPassword(e.target.value)}/></td>
-                <td style={blackBorder}>{user.name}</td>
-                <td style={blackBorder}><input className="box" type="text" onChange={e => setEmail(e.target.value)}/></td>
-                <td style={blackBorder}>{user.gender}</td>
-                <td style={blackBorder}>{user.birthday}</td>
-                <td style={blackBorder}><input className="box" type="text" onChange={e => setPhoneNumber(e.target.value)}/></td>
-                <td style={blackBorder}>{user.admin}</td>
-                <td style={blackBorder}><input className="box" type="text" onChange={e => setPreferGenre(e.target.value)}/></td>
-
-                </tr> 
-            <tr>
-            <td style={blackBorder} colSpan={2}><button style={btnStyle} onClick={userEdit} >수 정</button></td>
-                <td style={blackBorder} colSpan={2}><button style={btnStyle} onClick={()=>{props.history.push(`/profile`)}}>취 소</button></td>
-                <td style={blackBorder} colSpan={2}><button style={btnStyle} onClick={userDelete}>회원탈퇴</button></td>
-                </tr>
-        </table>
-        </div>
-        </>)
+    return (
+        <Wrapper>
+        <Divider />
+          <Col xl={5}>
+          <div>
+          <Title>회원정보수정</Title><br/>
+          <Label>아이디</Label><br/>
+          {user.gender}<br/>
+          <Label>비밀번호</Label>
+          <Input name="password" value={password}
+            placeholder = { password }
+            onChange={e => setPassword(e.target.value)}
+            required /><br/>
+          <Label>이름</Label><br/>
+          {user.name}<br/>
+            <Label>이메일</Label>
+          <Input name="email" value={email}
+            placeholder = { email }
+            onChange={e => setEmail(e.target.value)}
+            required /><br/>
+            <Label>성별</Label><br/>
+          {user.gender}<br/>
+            <Label>생년월일</Label><br/>
+          {user.birthday}<br/>
+            <Label>전화번호</Label>
+          <Input name="phoneNumber" value={phoneNumber}
+            placeholder = { phoneNumber }
+            onChange={e => setPhoneNumber(e.target.value)}
+            required /><br/>
+            <Label>선호장르</Label>
+          <Input name="preferGenre" value={preferGenre}
+            placeholder = { preferGenre }
+            onChange={e => setPreferGenre(e.target.value)}
+            required />
+          </div>
+          </Col>
+          <div className="container">
+          <button className="btn" onClick = { userEdit }>수정</button>
+          <button className="cancle-btn" onClick = { userDelete }>회원탈퇴</button>
+          </div>
+        <Divider> C:ART  |  Seoul Museum of Art </Divider>
+      </Wrapper>
+      
+  
+    );
 }
 
 export default UpdateUser

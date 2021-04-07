@@ -1,7 +1,6 @@
 package kr.wonyoungpark.api.analysis.service;
 
 
-import kr.wonyoungpark.api.common.service.AbstractService;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
@@ -11,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import kr.wonyoungpark.api.analysis.domain.Analysis;
 import kr.wonyoungpark.api.analysis.repository.AnalysisRepository;
-
+import kr.wonyoungpark.api.common.service.AbstractService;
 
 
 @Service @RequiredArgsConstructor

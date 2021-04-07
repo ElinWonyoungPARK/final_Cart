@@ -12,6 +12,7 @@ import { FieldWrapper, SwitchWrapper, Label } from 'container/user/Auth.style';
 import { HOME_PAGE } from 'settings/constant';
 
 const SignInForm = () => {
+  
   const {control} = useForm();
   const history = useHistory();
   const [userLogin, setUserLogin ] = useState({
