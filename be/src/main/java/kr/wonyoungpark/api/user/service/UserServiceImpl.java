@@ -63,6 +63,13 @@ public class UserServiceImpl implements UserService{
 		userRepo.deleteById(id);
 		return "SUCCESS";
 	}
+	@Override
+	public boolean checkDuplicateId(String username) {
+		if (username != null) {
+			return userRepo.checkId(username);
+		}
+		return false;
+	}
 
 	@Override
 	public Map<String, Object> signin(String username, String password) {

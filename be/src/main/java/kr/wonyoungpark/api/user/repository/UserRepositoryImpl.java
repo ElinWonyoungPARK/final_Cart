@@ -12,4 +12,5 @@ public class UserRepositoryImpl extends QuerydslRepositorySupport implements Use
 		super(UserVO.class);
 		//this.qf = qf;
 	}
+
 }

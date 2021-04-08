@@ -14,9 +14,12 @@ public interface UserService {
     Optional<UserVO> one(long id);
     String edit(UserVO userVo);
     String delete(long id);
+    boolean idCheck(UserVO userVo);
+    boolean checkDuplicateId(String username);
     public Map<String, Object> signin(String username, String password);
     public String signup(UserVO user);
     public UserVO search(String username);
     public UserVO whoami(HttpServletRequest req);
     public String refresh(String username);
+
 }

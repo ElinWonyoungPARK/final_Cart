@@ -16,5 +16,6 @@ interface UserCustomRepository {
 public interface UserRepository extends JpaRepository<UserVO, Long>, UserCustomRepository {
     boolean existsByUsername(String username);
     UserVO findByUsername(String username);
+    boolean checkId(String username);
 
 }

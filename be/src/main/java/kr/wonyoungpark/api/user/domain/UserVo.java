@@ -111,4 +111,6 @@ public class UserVO {
 				", preferGenre='" + preferGenre + '\'' +
 				'}';
 	}
+	public UserVO() {
+	}
 }
