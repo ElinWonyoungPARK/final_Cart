@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CrawlerTest {
-    /*
+
     public static void main(String[] args) {
         String FILE_PATH = "C:\\Users\\User\\WonyoungCode\\finalProject\\be\\src\\main\\resources\\";
         WebDriverManager.chromedriver().setup();
@@ -76,8 +76,8 @@ public class CrawlerTest {
         crawler.placeAutoUrl(reviews, driver,reviewURL+"search.naver?where=nexearch&sm=tab_etc&mra=bjBC&pkid=360&os=6482662&qvt=0&query=HI%2C%20POP%20-%20거리로%20나온%20예술%2C%20팝아트展%20평점","57");	 //HI, POP - 거리로 나온 예술, 팝아트展 평점
         crawler.placeAutoUrl(reviews, driver,reviewURL+"search.naver?where=nexearch&sm=tab_etc&mra=bjBC&pkid=360&os=6254123&qvt=0&query=The%20New%20Vision%20%3A%20from%20Bauhaus%20to%20A.I.%20평점","58");      //The New Vision : from Bauhaus to A.I. 평점
 
-        MakeCsv.createCSV(reviews, "ReviewerList", FILE_PATH); //csv파일 생성
+        //MakeCsv.createCSV(reviews, "ReviewerList", FILE_PATH);
+        MakeCsv.createCSV(reviews, "ReviewerList", FILE_PATH);
         driver.close();}
 
-     */
 }

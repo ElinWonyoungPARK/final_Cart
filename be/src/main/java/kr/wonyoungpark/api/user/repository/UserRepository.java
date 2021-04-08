@@ -16,6 +16,5 @@ interface UserCustomRepository {
 public interface UserRepository extends JpaRepository<UserVO, Long>, UserCustomRepository {
     boolean existsByUsername(String username);
     UserVO findByUsername(String username);
-    @Transactional
-    void deleteByUsername(String username);
+
 }

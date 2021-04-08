@@ -101,7 +101,7 @@ const AgentProfileInfo = () => {
   return (
     <Fragment>
       <BannerSection>
-        <Image className="absolute" src={cover_pic.url} alt="Profile cover" />
+        
       </BannerSection>
       <UserInfoArea>
         <Container fluid={true}>

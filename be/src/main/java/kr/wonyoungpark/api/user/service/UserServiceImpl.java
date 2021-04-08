@@ -59,6 +59,7 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public String delete(long id) {
+		System.out.print(">>>>>>> MMM>>>>>>>>>"+id);
 		userRepo.deleteById(id);
 		return "SUCCESS";
 	}
@@ -86,17 +87,14 @@ public class UserServiceImpl implements UserService{
 			user.setPassword(passwordEncoder.encode(user.getPassword()));
 			List<Role> roles = new ArrayList<>();
 			roles.add(Role.USER);
-			user.setRoles(roles);
+			// user.setRoles(roles);
 			userRepo.save(user);
-			return provider.createToken(user.getUsername(), user.getRoles());
+			return provider.createToken(user.getUsername(), roles);
 		} else {
 			throw new SecurityRuntimeException("Username is already in use", HttpStatus.UNPROCESSABLE_ENTITY);
 		}
 	}
-	@Override
-	public void delete(String username) {
-		userRepo.deleteByUsername(username);
-	}
+
 	@Override
 	public UserVO search(String username) {
 		UserVO user = userRepo.findByUsername(username);

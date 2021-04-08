@@ -16,7 +16,6 @@ public interface UserService {
     String delete(long id);
     public Map<String, Object> signin(String username, String password);
     public String signup(UserVO user);
-    public void delete(String username);
     public UserVO search(String username);
     public UserVO whoami(HttpServletRequest req);
     public String refresh(String username);

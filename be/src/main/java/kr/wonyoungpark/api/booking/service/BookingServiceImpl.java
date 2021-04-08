@@ -15,7 +15,10 @@ public class BookingServiceImpl extends AbstractService<Booking> implements Book
 	private final BookingRepository repo;
 	
 	@Override public long save(Booking b) { return (repo.save(b) != null) ?  1 : 0;}
-	@Override public long delete(Booking b) { repo.delete(b); return (getOne(b.getBookNum()) == null) ? 1 : 0;}
+	@Override public long delete(Booking b) {
+		repo.delete(b);
+		return (getOne(b.getBookNum()) == null) ? 1 : 0;
+	}
 	public String deleteId(long id) {
 		repo.deleteById(id);
 		return (id == 0L) ? "SUCCESS" : "FAIL";
