@@ -32,10 +32,10 @@ export default function ForgetPassWord() {
               errors.email && (
                 <>
                   {errors.email?.type === 'required' && (
-                    <span>This field is required!</span>
+                    <span>빈 칸을 작성해주세요</span>
                   )}
                   {errors.email?.type === 'pattern' && (
-                    <span>Please enter a valid email address!</span>
+                    <span>이메일 형식에 맞게 작성해주세요</span>
                   )}
                 </>
               )

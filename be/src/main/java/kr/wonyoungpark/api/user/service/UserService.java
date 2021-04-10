@@ -14,8 +14,8 @@ public interface UserService {
     Optional<UserVO> one(long id);
     String edit(UserVO userVo);
     String delete(long id);
-    boolean idCheck(UserVO userVo);
-    boolean checkDuplicateId(String username);
+    public boolean checkId(String id);
+    public boolean checkEmail(String email);
     public Map<String, Object> signin(String username, String password);
     public String signup(UserVO user);
     public UserVO search(String username);

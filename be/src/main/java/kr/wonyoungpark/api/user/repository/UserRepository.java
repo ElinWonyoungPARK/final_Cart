@@ -10,12 +10,11 @@ import java.util.List;
 import java.util.Optional;
 
 interface UserCustomRepository {
-
+    public UserVO checkId(String username);
+    public UserVO checkEmail(String email);
 }
 @Repository
 public interface UserRepository extends JpaRepository<UserVO, Long>, UserCustomRepository {
     boolean existsByUsername(String username);
     UserVO findByUsername(String username);
-    boolean checkId(String username);
-
 }

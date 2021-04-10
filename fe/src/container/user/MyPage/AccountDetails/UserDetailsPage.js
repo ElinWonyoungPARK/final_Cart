@@ -1,6 +1,7 @@
-import React, { useContext, Fragment } from 'react';
+import React, { useContext, Fragment, useState, useEffect } from 'react';
 import { Route, NavLink, Link } from 'react-router-dom';
 import isEmpty from 'lodash/isEmpty';
+import axios from 'axios'
 import {
   IoLogoTwitter,
   IoLogoFacebook,
@@ -27,7 +28,6 @@ import AgentDetailsPage, {
   SocialAccount,
   NavigationArea,
 } from 'container/user/MyPage/AccountDetails/UserDetails.style';
-import { ButtonBox } from 'container/exhibition/ExhibitionDetail.style';
 import UpdateUser from 'container/user/MyPage/AccountDetails/UpdateUser';
 import MyReviewList from './MyReviewList'
 
@@ -84,7 +84,7 @@ const ProfileRoute = (props) => {
   );
 };
 
-const AgentProfileInfo = () => {
+const AgentProfileInfo = ({ match }) => {
   const { data, loading } = useDataApi('/data/agent.json');
   if (isEmpty(data) || loading) return <Loader />;
   const {
@@ -96,19 +96,25 @@ const AgentProfileInfo = () => {
     social_profile,
   } = data[0];
 
-  const username = `${last_name} ${first_name}`;
-
+  const user = JSON.parse(localStorage.getItem("user"))
+ 
   return (
     <Fragment>
       <BannerSection>
-        
+        <Image className="absolute" src={cover_pic.url} alt="Profile cover" />
       </BannerSection>
       <UserInfoArea>
         <Container fluid={true}>
-          
+          <ProfileImage>
+            {profile_pic ? (
+              <Image src={profile_pic.url} alt="Profile" />
+            ) : (
+              <ProfilePicLoader />
+            )}
+          </ProfileImage>
           <ProfileInformationArea>
             <ProfileInformation>
-              <Heading content={username} />
+              <Heading content={`${user.name} 님의 마이페이지`} />
               <Text content={content} />
             </ProfileInformation>
           </ProfileInformationArea>
@@ -118,7 +124,7 @@ const AgentProfileInfo = () => {
   );
 };
 
-export default function UserDetailsPage(props) {
+const UserDetailsPage = (props) => {
   return (
     <AgentDetailsPage>
       <AuthProvider>
@@ -129,3 +135,5 @@ export default function UserDetailsPage(props) {
     </AgentDetailsPage>
   );
 }
+
+export default UserDetailsPage;

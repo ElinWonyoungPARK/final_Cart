@@ -47,29 +47,29 @@ const UpdateUser = (props) => {
           <div>
           <Title>회원정보수정</Title><br/>
           <Label>아이디</Label><br/>
-          {user.username}<br/>
+          <br/>{user.username}<br/>
           <Label>비밀번호</Label>
           <Input name="password" value={password}
             placeholder = '*******'
             onChange={e => setPassword(e.target.value)}
             required /><br/>
           <Label>이름</Label><br/>
-          {user.name}<br/>
+          <br/>{user.name}<br/>
             <Label>이메일</Label>
           <Input name="email" value={email}
             placeholder = { user.email }
             onChange={e => setEmail(e.target.value)}
             required /><br/>
             <Label>성별</Label><br/>
-          {user.gender}<br/>
+            <br/>{user.gender}<br/><br/>
             <Label>생년월일</Label><br/>
-          {user.birthday}<br/>
-            <Label>전화번호</Label>
-          <Input name="phoneNumber" value={phoneNumber}
+            <br/>{user.birthday}<br/><br/>
+            <Label>전화번호</Label><br/><br/>
+            <br/><Input name="phoneNumber" value={phoneNumber}
             placeholder = { user.phoneNumber }
             onChange={e => setPhoneNumber(e.target.value)}
             required /><br/>
-            <Label>선호장르</Label>
+            <br/><Label>선호장르</Label><br/><br/>
           <Input name="preferGenre" value={preferGenre}
             placeholder = { user.preferGenre }
             onChange={e => setPreferGenre(e.target.value)}

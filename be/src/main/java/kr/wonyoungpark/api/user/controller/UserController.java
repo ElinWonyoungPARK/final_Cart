@@ -55,6 +55,14 @@ public class UserController {
 		System.out.println("Item One Id: "+id);
 		return ResponseEntity.ok(userService.one(id));
 	}
+	@GetMapping("/checkId/{id}")
+	public boolean checkId(@PathVariable String id){
+		return userService.checkId(id);
+	}
+	@GetMapping("/checkEmail/{email}")
+	public boolean checkEmail(@PathVariable String email){
+		return userService.checkEmail(email);
+	}
 	@PutMapping("/{id}")
 	public ResponseEntity<String> edit(@PathVariable long id, @RequestBody UserVO user){
 		System.out.println("edit: "+user.toString());

@@ -57,18 +57,17 @@ public class UserServiceImpl implements UserService{
 		return (user != null) ? "SUCCESS" : "FAILURE";
 	}
 
+	@Override public boolean checkId(String id) {
+		return (userRepo.checkId(id) != null ? true : false); }
+
+	@Override public boolean checkEmail(String email) {
+		return (userRepo.checkEmail(email) != null ? true : false); }
+
 	@Override
 	public String delete(long id) {
 		System.out.print(">>>>>>> MMM>>>>>>>>>"+id);
 		userRepo.deleteById(id);
 		return "SUCCESS";
-	}
-	@Override
-	public boolean checkDuplicateId(String username) {
-		if (username != null) {
-			return userRepo.checkId(username);
-		}
-		return false;
 	}
 
 	@Override

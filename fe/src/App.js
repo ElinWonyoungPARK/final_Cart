@@ -96,6 +96,7 @@ const routes = [
       modules: ['MyReviewList'],
     }),
   },
+
   {
     path: `${BOOKING_PAGE}/:exhbnNum`,
     component: Loadable({

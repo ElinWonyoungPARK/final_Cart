@@ -3,7 +3,7 @@ import { themeGet } from '@styled-system/theme-get';
 const UserDetailsPage = styled.div``;
 
 export const BannerSection = styled.div`
-  height: 75px;
+  height: 110px;
   background-color: #e9e8ec;
   position: relative;
   @media (max-width: 480px) {
@@ -29,13 +29,12 @@ export const UserInfoArea = styled.div`
 `;
 
 export const ProfileImage = styled.div`
-  width: 180px;
-  height: 180px;
-  border-radius: 3px;
+  width: 0px;
+  height: 0px;
+  border-radius: 0px;
   overflow: hidden;
-  background-color: #e9e8ec;
+  background-color: #ffffff;
   border: 5px solid ${themeGet('color.1', '#ffffff')};
-  box-shadow: 0 3px 6px ${themeGet('boxShadow.1', 'rgba(26, 68, 116, 0.16)')};
   margin-bottom: 27px;
   @media (max-width: 480px) {
     width: 150px;
