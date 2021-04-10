@@ -93,7 +93,6 @@ const AddExhibition = ( )  => {
             <FormControl
               label="시작 날짜"
               htmlFor="startDate"
-              // error={errors.startDate && <span>이 입력란을 작성해주세요!</span>}
             >
             <DatePicker
               name="startDate"

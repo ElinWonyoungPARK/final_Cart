@@ -46,24 +46,24 @@ const UpdateUser = (props) => {
           <Col xl={5}>
           <div>
           <Title>회원정보수정</Title><br/>
-          <Label>아이디</Label><br/>
-          <br/>{user.username}<br/>
+          <Label>아이디</Label>
+          <div>{user.username}</div>
           <Label>비밀번호</Label>
           <Input name="password" value={password}
             placeholder = '*******'
             onChange={e => setPassword(e.target.value)}
             required /><br/>
           <Label>이름</Label><br/>
-          <br/>{user.name}<br/>
+          <div>{user.name}</div>
             <Label>이메일</Label>
           <Input name="email" value={email}
             placeholder = { user.email }
             onChange={e => setEmail(e.target.value)}
             required /><br/>
             <Label>성별</Label><br/>
-            <br/>{user.gender}<br/><br/>
+            <div>{user.gender}</div>
             <Label>생년월일</Label><br/>
-            <br/>{user.birthday}<br/><br/>
+            <div>{user.birthday}</div>
             <Label>전화번호</Label><br/><br/>
             <br/><Input name="phoneNumber" value={phoneNumber}
             placeholder = { user.phoneNumber }

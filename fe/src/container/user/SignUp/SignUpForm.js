@@ -8,7 +8,6 @@ import { FormControl } from 'components/index';
 import { FieldWrapper, SwitchWrapper, Label } from 'container/user/Auth.style';
 import { LOGIN_PAGE } from 'settings/constant'
 import styled from "styled-components";
-import { CustonRadioButton } from './CustonRadioButton';
 
 const StyledButton = styled.button`
 color: #ffffff;
