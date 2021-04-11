@@ -13,8 +13,10 @@ const Wrapper = styled.div`
     height: 100%;
     width: 85%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align: left;
+    position: relative;
+    bottom: 5rem;
   }
 
   .btn {
@@ -230,7 +232,6 @@ export const DescriptionWrapper = styled.div`
 `;
 
 export const Input = styled.input`
-  width: 90%;
   height: 30px;
   margin-bottom: 15px;
   margin-top: 5px;

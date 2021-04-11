@@ -11,7 +11,7 @@ import java.util.Optional;
 public interface UserService {
     String save(UserVO userVo);
     List<UserVO> all();
-    Optional<UserVO> one(long id);
+    UserVO one(long id);
     String edit(UserVO userVo);
     String delete(long id);
     public boolean checkId(String id);

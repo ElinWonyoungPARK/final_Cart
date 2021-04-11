@@ -5,15 +5,9 @@ import { useForm, Controller } from 'react-hook-form';
 import { MdLockOpen } from 'react-icons/md';
 import { Input, Switch, message, Button } from 'antd';
 import { FormControl } from 'components/index';
-import { FieldWrapper, SwitchWrapper, Label } from 'container/user/Auth.style';
+import { FieldWrapper, SwitchWrapper, Label, StyledButton } from 'container/user/Auth.style';
 import { LOGIN_PAGE } from 'settings/constant'
 import styled from "styled-components";
-
-const StyledButton = styled.button`
-color: #ffffff;
-background-color: #97abd1;
-box-shadow: #97abd1 0 0px 0px 2px inset;
-`;
 
 const SignUpForm = () => {
   const { control } = useForm();

@@ -51,7 +51,7 @@ public class UserController {
 		return ResponseEntity.ok(userService.all());
 	}
 	@GetMapping("/{id}")
-	public ResponseEntity<Optional<UserVO>> one(@PathVariable long id){
+	public ResponseEntity<UserVO> one(@PathVariable long id){
 		System.out.println("Item One Id: "+id);
 		return ResponseEntity.ok(userService.one(id));
 	}
@@ -65,8 +65,23 @@ public class UserController {
 	}
 	@PutMapping("/{id}")
 	public ResponseEntity<String> edit(@PathVariable long id, @RequestBody UserVO user){
-		System.out.println("edit: "+user.toString());
-		return ResponseEntity.ok(userService.edit(user));
+		UserVO u = userService.one(id);
+		if(!(u.getPassword().equals(user.getPassword()) || user.getPassword().equals(""))) {
+			u.setPassword(user.getPassword());
+		}
+		if(!(u.getName().equals(user.getName()) || user.getName().equals(""))) {
+			u.setName(user.getName());
+		}
+		if(!(u.getEmail().equals(user.getEmail()) || user.getEmail().equals(""))) {
+			u.setEmail(user.getEmail());
+		}
+		if(!(u.getPreferGenre().equals(user.getPreferGenre()) || user.getPreferGenre().equals(""))) {
+			u.setPreferGenre(user.getPreferGenre());
+		}
+		if(!(u.getPhoneNumber().equals(user.getPhoneNumber()) || user.getPhoneNumber().equals(""))) {
+			u.setPhoneNumber(user.getPhoneNumber());
+		}
+		return ResponseEntity.ok(userService.save(u));
 	}
 	@DeleteMapping("/{id}")
 	public ResponseEntity<String> delete(@PathVariable long id){

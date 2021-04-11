@@ -3,6 +3,7 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import { AuthContext } from 'context/index';
 import { Layout } from 'container/index';
+import MyChart from 'container/common/MyChart'
 import {
   LOGIN_PAGE,
   REGISTRATION_PAGE,
@@ -195,6 +196,15 @@ const routes = [
         import('./container/exhibition/UpdateExhibition'),
       loading: Loading,
       modules: ['UpdateExhbn'],
+    }),
+  },
+  {
+    path: `${MyChart}/:userNum`,
+    component: Loadable({
+      loader: () =>
+        import('container/common/MyChart'),
+      loading: Loading,
+      modules: ['MyChart'],
     }),
   },
   {

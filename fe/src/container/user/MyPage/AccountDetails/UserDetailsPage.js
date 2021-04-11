@@ -114,8 +114,8 @@ const AgentProfileInfo = ({ match }) => {
           </ProfileImage>
           <ProfileInformationArea>
             <ProfileInformation>
-              <Heading content={`${user.name} 님의 마이페이지`} />
-              <Text content={content} />
+              <Heading content={`${user.name} 님의 MY PAGE`} />
+              <Text content={`${user.name}님! 찜한 전시회를 예약해보세요`} />
             </ProfileInformation>
           </ProfileInformationArea>
         </Container>

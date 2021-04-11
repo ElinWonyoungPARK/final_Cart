@@ -1,8 +1,12 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react' 
 import { Link } from 'react-router-dom';
-import { Divider, Col} from 'antd';
 import Wrapper, { TextInfo, Label, Title, Input } from 'container/user/MyPage/AccountDetails/UpdateUser.style';
+import { DragAndDropUploader, FormControl } from 'components/index';
+import { Row, Col, Divider } from 'antd';
+import { FormHeader, FormContent, FormAction } from 'container/exhibition/AddExhibition.style';
+
+
 const UpdateUser = (props) => {
     const [ user, setUser ] = useState({})
     const [username, setUsername] = useState('')
@@ -43,39 +47,97 @@ const UpdateUser = (props) => {
     return (
         <Wrapper>
         <Divider />
-          <Col xl={5}>
-          <div>
-          <Title>회원정보수정</Title><br/>
-          <Label>아이디</Label>
-          <div>{user.username}</div>
-          <Label>비밀번호</Label>
-          <Input name="password" value={password}
-            placeholder = '*******'
-            onChange={e => setPassword(e.target.value)}
-            required /><br/>
-          <Label>이름</Label><br/>
-          <div>{user.name}</div>
-            <Label>이메일</Label>
-          <Input name="email" value={email}
-            placeholder = { user.email }
-            onChange={e => setEmail(e.target.value)}
-            required /><br/>
-            <Label>성별</Label><br/>
-            <div>{user.gender}</div>
-            <Label>생년월일</Label><br/>
-            <div>{user.birthday}</div>
-            <Label>전화번호</Label><br/><br/>
-            <br/><Input name="phoneNumber" value={phoneNumber}
-            placeholder = { user.phoneNumber }
-            onChange={e => setPhoneNumber(e.target.value)}
-            required /><br/>
-            <br/><Label>선호장르</Label><br/><br/>
-          <Input name="preferGenre" value={preferGenre}
-            placeholder = { user.preferGenre }
-            onChange={e => setPreferGenre(e.target.value)}
-            required />
-          </div>
-          </Col>
+          <FormContent>
+          <FormHeader>
+          <Title>회원정보 수정</Title>
+        </FormHeader>
+          <Row gutter={30}>
+            <Col sm={12}>
+              <FormControl
+                label="아이디"
+              >
+              <div>{user.username}</div>
+              </FormControl>
+            </Col>
+          </Row>
+          <Row gutter={30}>
+            <Col sm={12}>
+              <FormControl
+                label="비밀번호"
+              >
+              <Input name="password" value={password}
+                     placeholder = '*******'
+                     onChange={e => setPassword(e.target.value)} required/>
+              </FormControl>
+            </Col>
+          </Row>
+          <Row gutter={30}>
+            <Col sm={12}>
+              <FormControl
+                label="이름"
+              >
+              <div>{user.name}</div>
+              </FormControl>
+            </Col>
+          </Row>
+          <Row gutter={30}>
+            <Col sm={12}>
+              <FormControl
+                label="이메일"
+              >
+              <Input name="email" value={email}
+                     placeholder = { user.email }
+                     onChange={e => setEmail(e.target.value)} required/>
+              </FormControl>
+            </Col>
+          </Row>
+          <Row gutter={30}>
+            <Col sm={12}>
+              <FormControl
+                label="성별"
+              >
+              <div>{user.gender}</div>
+              </FormControl>
+            </Col>
+          </Row>
+          <Row gutter={30}>
+            <Col sm={12}>
+              <FormControl
+                label="생년월일"
+              >
+              <div>{user.birthday}</div>
+              </FormControl>
+            </Col>
+          </Row>
+          <Row gutter={30}>
+            <Col sm={12}>
+              <FormControl
+                label="전화번호"
+              >
+              <Input name="phoneNumber" value={phoneNumber}
+                     placeholder = { user.phoneNumber }
+                     onChange={e => setPhoneNumber(e.target.value)} required/>
+              </FormControl>
+            </Col>
+          </Row>
+          <Row gutter={30}>
+            <Col sm={12}>
+              <FormControl
+                label="선호장르"
+              >
+          <select name="preferGenre" value={preferGenre} 
+                  onChange={ e => setPreferGenre(e.target.value) }>
+            <option value="selection">선택</option>
+            <option value="painting">회화</option>
+            <option value="media">미디어</option>
+            <option value="sculpture">조각</option>
+            <option value="craft">공예</option>
+            <option value="installation">설치</option>
+          </select>
+              </FormControl>
+            </Col>
+          </Row>
+          </FormContent>
           <div className="container">
           <button className="btn" onClick = { userEdit }>수정</button>
           <button className="cancle-btn" onClick = { userDelete }>회원탈퇴</button>
